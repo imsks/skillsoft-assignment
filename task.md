@@ -3,17 +3,17 @@ Codecademy Engineering Machine Coding - Ver 2 Develop a RESTful API to create an
 Requirements
 Your API must support the following endpoints:
 
-1. Create a recipe
+1. DONE - Create a recipe
    a. Accept recipe details (e.g., name, ingredients, instructions, prep time).
    b. Return the recipe's unique ID and details.
-2. Delete a recipe
+2. DONE - Delete a recipe
    a. Remove a recipe by its ID.
-3. Update a recipe
+3. DONE -Update a recipe
    a. Modify an existing recipe’s details by its ID.
    b. Support partial updates
-4. Fetch a recipe by ID
+4. DONE - Fetch a recipe by ID
    a. Retrieve a specific recipe’s details using its unique ID.
-5. Fetch a list of recipes
+5. DONE - Fetch a list of recipes
    a. Return a paginated list of recipes with their metadata.
    b. Support searching on a few attributes.
    c. Support advanced filtering and sorting.

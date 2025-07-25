@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "ba304c48-db3c-42ae-b186-7e0e7c068cb5",
+    "createdAt": "2025-07-25T10:12:36.044Z",
+    "updatedAt": "2025-07-25T10:12:36.044Z",
+    "name": "Recipe 1",
+    "ingredients": [
+      "ingredients1",
+      "ingredients2"
+    ],
+    "instructions": "instructions",
+    "prepTime": 20
+  },
+  {
+    "id": "01ce308c-4c66-4b25-9ad4-c6050ac87a13",
+    "createdAt": "2025-07-25T10:12:39.207Z",
+    "updatedAt": "2025-07-25T10:12:39.207Z",
+    "name": "Recipe 2",
+    "ingredients": [
+      "ingredients1",
+      "ingredients2"
+    ],
+    "instructions": "instructions",
+    "prepTime": 20
+  },
+  {
+    "id": "df530173-3aa4-4606-a86a-2e82204549a5",
+    "createdAt": "2025-07-25T10:12:41.990Z",
+    "updatedAt": "2025-07-25T10:12:41.990Z",
+    "name": "Recipe 3",
+    "ingredients": [
+      "ingredients1",
+      "ingredients2"
+    ],
+    "instructions": "instructions",
+    "prepTime": 20
+  },
+  {
+    "id": "dd3db456-33cf-496b-98ef-740f1b5c48b3",
+    "createdAt": "2025-07-25T10:12:44.043Z",
+    "updatedAt": "2025-07-25T10:12:44.043Z",
+    "name": "Recipe 4",
+    "ingredients": [
+      "ingredients1",
+      "ingredients2"
+    ],
+    "instructions": "instructions",
+    "prepTime": 20
+  },
+  {
+    "id": "54a8073c-49e3-413e-b05d-da9cfb2e1e7e",
+    "createdAt": "2025-07-25T10:12:45.866Z",
+    "updatedAt": "2025-07-25T10:12:45.866Z",
+    "name": "Recipe 5",
+    "ingredients": [
+      "ingredients1",
+      "ingredients2"
+    ],
+    "instructions": "instructions",
+    "prepTime": 20
+  }
+]

@@ -8,7 +8,14 @@ const DATA_PATH = path.join(__dirname, "../data/recipes.json")
 const readRecipesFromFile = (): Recipe[] => {
     if (!fs.existsSync(DATA_PATH)) return []
     const data = fs.readFileSync(DATA_PATH, "utf-8")
-    return JSON.parse(data || "[]") as Recipe[]
+    const rawRecipes = JSON.parse(data || "[]")
+
+    // Convert date strings back to Date objects
+    return rawRecipes.map((recipe: any) => ({
+        ...recipe,
+        createdAt: new Date(recipe.createdAt),
+        updatedAt: new Date(recipe.updatedAt)
+    })) as Recipe[]
 }
 
 const writeRecipesToFile = (recipes: Recipe[]) => {
@@ -87,10 +94,34 @@ export const listRecipes = (
         const aVal = a[sortBy as keyof Recipe]
         const bVal = b[sortBy as keyof Recipe]
 
-        if (aVal instanceof Date && bVal instanceof Date) {
+        // Handle Date objects and date strings
+        if (
+            (aVal instanceof Date || typeof aVal === "string") &&
+            (bVal instanceof Date || typeof bVal === "string") &&
+            (sortBy === "createdAt" || sortBy === "updatedAt")
+        ) {
+            const aTime =
+                aVal instanceof Date
+                    ? aVal.getTime()
+                    : new Date(aVal as string).getTime()
+            const bTime =
+                bVal instanceof Date
+                    ? bVal.getTime()
+                    : new Date(bVal as string).getTime()
+
+            return order === "asc" ? aTime - bTime : bTime - aTime
+        }
+
+        // Handle string sorting for name and other string fields
+        if (typeof aVal === "string" && typeof bVal === "string") {
             return order === "asc"
-                ? new Date(aVal).getTime() - new Date(bVal).getTime()
-                : new Date(bVal).getTime() - new Date(aVal).getTime()
+                ? aVal.localeCompare(bVal)
+                : bVal.localeCompare(aVal)
+        }
+
+        // Handle number sorting for prepTime
+        if (typeof aVal === "number" && typeof bVal === "number") {
+            return order === "asc" ? aVal - bVal : bVal - aVal
         }
 
         return 0
