@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ab766d59-38b7-4c89-a4f8-635d21f10966",
+    "createdAt": "2025-07-25T09:59:54.429Z",
+    "updatedAt": "2025-07-25T09:59:54.429Z",
+    "name": "Recipe 1",
+    "ingredients": [
+      "ingredients1",
+      "ingredients2"
+    ],
+    "instructions": "instructions",
+    "prepTime": 20
+  }
+]
