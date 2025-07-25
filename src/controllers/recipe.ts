@@ -51,7 +51,9 @@ export const remove = (req: Request, res: Response) => {
         return res
             .status(API_STATUS.NOT_FOUND)
             .json({ error: "Recipe not found" })
-    res.status(API_STATUS.SUCCESS).send()
+    res.status(API_STATUS.SUCCESS).send(
+        sendAPIResponse(true, "Recipe deleted successfully")
+    )
 }
 
 export const list = (req: Request, res: Response) => {
@@ -69,5 +71,5 @@ export const list = (req: Request, res: Response) => {
         sortBy as string,
         order as "asc" | "desc"
     )
-    res.json(recipes)
+    res.json(sendAPIResponse(true, "Recipes fetched successfully", recipes))
 }
