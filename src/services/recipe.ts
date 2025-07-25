@@ -3,7 +3,10 @@ import { v4 as uuidv4 } from "uuid"
 import fs from "fs"
 import path from "path"
 
-const DATA_PATH = path.join(__dirname, "../data/recipes.json")
+const DATA_PATH =
+    process.env.NODE_ENV === "test"
+        ? path.join(__dirname, "../data/test-recipes.json")
+        : path.join(__dirname, "../data/recipes.json")
 
 const readRecipesFromFile = (): Recipe[] => {
     if (!fs.existsSync(DATA_PATH)) return []
